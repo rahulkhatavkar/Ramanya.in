@@ -28,6 +28,26 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
+    .site-brand {
+      position: absolute;
+      top: 18px;
+      left: 24px;
+      display: block;
+      width: clamp(156px, 18vw, 210px);
+      line-height: 0;
+    }
+
+    .site-brand img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .site-brand:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
+
     main {
       display: grid;
       min-height: 100svh;
@@ -37,23 +57,23 @@
     }
 
     .announcement {
-      width: min(100%, 640px);
+      width: min(100%, 680px);
       animation: arrive 700ms ease-out both;
-    }
-
-    .name {
-      margin: 0;
-      font-size: clamp(2.8rem, 10vw, 6.5rem);
-      font-weight: 400;
-      line-height: 1;
     }
 
     .divider {
       width: 48px;
       height: 2px;
-      margin: 30px auto 24px;
+      margin: 4px auto 24px;
       border: 0;
       background: var(--accent);
+    }
+
+    @media (max-width: 480px) {
+      .site-brand {
+        top: 12px;
+        left: 16px;
+      }
     }
 
     .status {
@@ -93,9 +113,11 @@
   </style>
 </head>
 <body>
+  <a class="site-brand" href="/" aria-label="Ramanya home" title="Home">
+    <img src="logo.svg" alt="">
+  </a>
   <main>
-    <section class="announcement" aria-labelledby="site-name">
-      <h1 class="name" id="site-name">Ramanya.in</h1>
+    <section class="announcement">
       <hr class="divider">
       <p class="status" aria-label="Coming Soon">
         <span class="status-word" aria-hidden="true">Coming</span>

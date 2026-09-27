@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Ramanya</title>
+  <desc id="logo-description">Ramanya wordmark with a large RAM monogram and the tagline Where Every Experience is Crafted with Heart.</desc>
+  <text x="300" y="276" text-anchor="middle" fill="#101a30" font-family="Bodoni 72, Didot, Bodoni MT, Georgia, serif" font-size="242" font-weight="700" letter-spacing="-20">RAM</text>
+  <rect x="34" y="165" width="532" height="91" fill="#f5f4ef"/>
+  <text x="300" y="226" text-anchor="middle" fill="#101a30" font-family="Georgia, Times New Roman, serif" font-size="37" font-weight="400" letter-spacing="10">RAMANYA</text>
+  <text x="300" y="352" text-anchor="middle" fill="#68727c" font-family="Arial Narrow, Arial, sans-serif" font-size="20" font-weight="400" letter-spacing="0.2">Where Every Experience is Crafted with Heart</text>
+</svg>
