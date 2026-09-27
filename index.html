@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Ramanya.in is coming soon.">
+  <title>Ramanya.in — Coming Soon</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202923;
+      --muted: #657169;
+      --paper: #f5f4ef;
+      --accent: #bd5439;
+      --line: rgba(32, 41, 35, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image: radial-gradient(rgba(32, 41, 35, 0.09) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    main {
+      display: grid;
+      min-height: 100svh;
+      place-items: center;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .announcement {
+      width: min(100%, 640px);
+      animation: arrive 700ms ease-out both;
+    }
+
+    .name {
+      margin: 0;
+      font-size: clamp(2.8rem, 10vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      margin: 30px auto 24px;
+      border: 0;
+      background: var(--accent);
+    }
+
+    .status {
+      margin: 0;
+      color: var(--muted);
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .status-word {
+      display: inline-block;
+      animation: word-loop 1.6s ease-in-out infinite;
+    }
+
+    .status-word + .status-word { margin-left: 0.35em; }
+    .status-word:nth-child(2) { animation-delay: 300ms; }
+
+    @keyframes word-loop {
+      0%, 100% { opacity: 0.72; transform: translateY(3px); }
+      50% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="announcement" aria-labelledby="site-name">
+      <h1 class="name" id="site-name">Ramanya.in</h1>
+      <hr class="divider">
+      <p class="status" aria-label="Coming Soon">
+        <span class="status-word" aria-hidden="true">Coming</span>
+        <span class="status-word" aria-hidden="true">Soon</span>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
