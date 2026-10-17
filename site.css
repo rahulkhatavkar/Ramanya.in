@@ -81,9 +81,27 @@ h1, h2, h3, p { margin-top: 0; }
 .hero-art::before { position: absolute; z-index: -1; width: 244px; aspect-ratio: 1; border: 1px solid rgba(184, 155, 103, 0.45); border-radius: 50%; content: ""; }
 .hero-art::after { position: absolute; z-index: -1; width: 204px; aspect-ratio: 1; border: 1px solid rgba(184, 155, 103, 0.22); border-radius: 50%; content: ""; }
 .hero-art__orbit { position: absolute; z-index: -1; width: 300px; height: 98px; border: 1px solid rgba(49, 122, 110, 0.27); border-radius: 50%; transform: rotate(-29deg); }
-.hero-art__orbit--two { width: 310px; height: 120px; border-color: rgba(200, 111, 88, 0.2); transform: rotate(37deg); }
-.hero-art img { display: block; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; mix-blend-mode: multiply; }
+.hero-art__orbit--one { animation: ramanya-orbit 24s linear infinite; }
+.hero-art__orbit--one::before { position: absolute; top: -4px; left: 50%; width: 8px; aspect-ratio: 1; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(184, 155, 103, 0.16); content: ""; transform: translateX(-50%); }
+.hero-art:hover .hero-art__orbit--one, .hero-art:hover .hero-art__orbit--two { animation-play-state: paused; }
+.hero-art__orbit--two { width: 310px; height: 120px; border-color: rgba(200, 111, 88, 0.2); transform: rotate(37deg); animation: ramanya-orbit-reverse 32s linear infinite; }
+.hero-art img { display: block; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; mix-blend-mode: multiply; animation: ramanya-mark-arrive 900ms cubic-bezier(0.2, 0.75, 0.25, 1) both; }
 .hero-art__caption { position: absolute; right: 0; bottom: 8px; color: var(--muted); font-family: var(--serif); font-size: 14px; font-style: italic; line-height: 1.45; text-align: right; }
+
+@keyframes ramanya-orbit {
+  from { transform: rotate(-29deg); }
+  to { transform: rotate(331deg); }
+}
+
+@keyframes ramanya-orbit-reverse {
+  from { transform: rotate(37deg); }
+  to { transform: rotate(-323deg); }
+}
+
+@keyframes ramanya-mark-arrive {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
 
 .ventures { padding-block: 42px 94px; scroll-margin-top: 24px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 25px; }
@@ -311,5 +329,5 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
