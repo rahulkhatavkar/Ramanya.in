@@ -209,6 +209,7 @@ h1, h2, h3, p { margin-top: 0; }
 .flat-detail-block:first-child { padding-top: 0; }
 .flat-detail-block h2 { margin: 0 0 11px; font-family: var(--serif); font-size: 27px; font-weight: 400; }
 .flat-detail-block > p { max-width: 650px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.flat-detail-block > .flat-rules__note { margin-bottom: 16px; }
 .flat-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; margin-top: 22px; }
 .flat-fact { display: grid; gap: 5px; }
 .flat-fact span, .flat-rule span { color: var(--muted); font-size: 11px; }

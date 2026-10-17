@@ -56,10 +56,16 @@
             </div>
           </section>
           <section class="flat-detail-block" aria-labelledby="flat-rules-title">
-            <h2 id="flat-rules-title">House details</h2>
+            <h2 id="flat-rules-title">House rules</h2>
+            <p class="flat-rules__note">Suggested short-stay defaults. Confirm quiet hours and building requirements before accepting reservations.</p>
             <ul class="flat-rules">
               <li class="flat-rule"><span>Check-in</span><strong>11:00 AM, fixed</strong></li>
-              <li class="flat-rule"><span>Check-out</span><strong>To be confirmed</strong></li>
+              <li class="flat-rule"><span>Check-out</span><strong>10:00 AM, fixed</strong></li>
+              <li class="flat-rule"><span>Quiet hours</span><strong>10:00 PM to 8:00 AM</strong></li>
+              <li class="flat-rule"><span>Smoking indoors</span><strong>Not permitted</strong></li>
+              <li class="flat-rule"><span>Parties or events</span><strong>Not permitted</strong></li>
+              <li class="flat-rule"><span>Guests</span><strong>Only guests on the reservation</strong></li>
+              <li class="flat-rule"><span>Pets</span><strong>Ask before booking</strong></li>
               <li class="flat-rule"><span>Cancellation policy</span><strong>To be confirmed</strong></li>
             </ul>
           </section>
@@ -89,6 +95,10 @@
             <div class="flat-booking__time">
               <span>Check-in time</span>
               <strong>11:00 AM</strong>
+            </div>
+            <div class="flat-booking__time">
+              <span>Check-out time</span>
+              <strong>10:00 AM</strong>
             </div>
             <button class="stay-search__submit" type="submit">Review stay <span aria-hidden="true">&#8599;</span></button>
           </form>
@@ -142,7 +152,7 @@
       const formatDate = (date) => new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" }).format(date);
 
       bookingResultTitle.textContent = "Stay details ready to review";
-      bookingResultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guestInput.value} guest${Number(guestInput.value) === 1 ? "" : "s"} · check-in at 11:00 AM. Price and availability are still to be confirmed; no booking has been sent.`;
+      bookingResultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guestInput.value} guest${Number(guestInput.value) === 1 ? "" : "s"} · check-in at 11:00 AM, check-out by 10:00 AM. Price and availability are still to be confirmed; no booking has been sent.`;
       bookingResult.hidden = false;
     });
   </script>

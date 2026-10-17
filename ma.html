@@ -68,6 +68,11 @@
           <small class="stay-search__field-note" id="stay-arrival-note">Fixed at 11:00 AM</small>
         </div>
         <div class="stay-search__field">
+          <label for="stay-departure-time">Check-out time</label>
+          <input id="stay-departure-time" name="departureTime" type="time" value="10:00" readonly required aria-describedby="stay-departure-note">
+          <small class="stay-search__field-note" id="stay-departure-note">Fixed at 10:00 AM</small>
+        </div>
+        <div class="stay-search__field">
           <label for="stay-adults">Adults</label>
           <input id="stay-adults" name="adults" type="number" min="1" max="16" value="2" required>
         </div>
@@ -180,6 +185,8 @@
       const formatDate = (date) => new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" }).format(date);
       const [hours, minutes] = document.querySelector("#stay-arrival-time").value.split(":").map(Number);
       const arrivalTime = new Date(2000, 0, 1, hours, minutes).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
+      const [departureHours, departureMinutes] = document.querySelector("#stay-departure-time").value.split(":").map(Number);
+      const departureTime = new Date(2000, 0, 1, departureHours, departureMinutes).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
       const adults = Number(document.querySelector("#stay-adults").value);
       const children = Number(document.querySelector("#stay-children").value);
       const rooms = Number(document.querySelector("#stay-rooms").value);
@@ -188,7 +195,7 @@
       if (children) guests.push(`${children} child${children === 1 ? "" : "ren"}`);
 
       resultTitle.textContent = `Search prepared for ${destinationInput.value.trim()}`;
-      resultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guests.join(", ")} · ${rooms} room${rooms === 1 ? "" : "s"} · check-in at ${arrivalTime}. Live availability isn't connected yet, so no booking has been made.`;
+      resultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guests.join(", ")} · ${rooms} room${rooms === 1 ? "" : "s"} · check-in at ${arrivalTime}, check-out by ${departureTime}. Live availability isn't connected yet, so no booking has been made.`;
       result.hidden = false;
     });
   </script>
