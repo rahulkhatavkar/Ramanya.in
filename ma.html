@@ -64,7 +64,8 @@
         </div>
         <div class="stay-search__field">
           <label for="stay-arrival-time">Check-in time</label>
-          <input id="stay-arrival-time" name="arrivalTime" type="time" value="15:00" required>
+          <input id="stay-arrival-time" name="arrivalTime" type="time" value="11:00" readonly required aria-describedby="stay-arrival-note">
+          <small class="stay-search__field-note" id="stay-arrival-note">Fixed at 11:00 AM</small>
         </div>
         <div class="stay-search__field">
           <label for="stay-adults">Adults</label>
@@ -87,6 +88,18 @@
         <strong class="stay-search__result-title"></strong>
         <p class="stay-search__result-copy"></p>
       </div>
+    </section>
+
+    <section class="featured-flat shell" aria-labelledby="featured-flat-title">
+      <div class="featured-flat__copy">
+        <p class="eyebrow">First listing</p>
+        <h2 id="featured-flat-title">Your flat on M Stays.</h2>
+        <p>Open the listing preview now. Add photos, address, pricing and amenities when they're ready.</p>
+        <a class="text-link" href="flat.html">View the flat <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <a class="featured-flat__preview" href="flat.html" aria-label="View the flat listing preview">
+        <span>Flat photos<br>coming soon</span>
+      </a>
     </section>
 
     <section class="content-section shell" id="experience">
@@ -175,7 +188,7 @@
       if (children) guests.push(`${children} child${children === 1 ? "" : "ren"}`);
 
       resultTitle.textContent = `Search prepared for ${destinationInput.value.trim()}`;
-      resultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guests.join(", ")} · ${rooms} room${rooms === 1 ? "" : "s"} · arrival around ${arrivalTime}. Live availability isn't connected yet, so no booking has been made.`;
+      resultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guests.join(", ")} · ${rooms} room${rooms === 1 ? "" : "s"} · check-in at ${arrivalTime}. Live availability isn't connected yet, so no booking has been made.`;
       result.hidden = false;
     });
   </script>

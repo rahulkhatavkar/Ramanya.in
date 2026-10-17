@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf0f5">
+  <meta name="description" content="A Ramanya flat listing on M Stays. Photos and property details are being prepared.">
+  <title>Your flat | M Stays by Ramanya</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="theme-ma">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ramanya home">
+      <img class="brand__logo" src="ramanya-logo.jpg" alt="">
+      <span class="brand__text"><strong>RAMANYA</strong><span>Ventures &amp; experiences</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Venture navigation">
+      <a href="ra.html"><span class="nav-code nav-code--ra">R</span><span>AI &amp; Automation</span></a>
+      <a href="ny.html"><span class="nav-code nav-code--ny">A</span><span>Next venture</span></a>
+      <a href="ma.html" aria-current="page"><span class="nav-code nav-code--ma">M</span><span>Stays</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="flat-listing shell" aria-labelledby="flat-title">
+      <a class="flat-breadcrumb" href="ma.html"><span aria-hidden="true">&#8592;</span> M Stays</a>
+      <div class="flat-listing__header">
+        <div>
+          <p class="eyebrow">A Ramanya stay</p>
+          <h1 id="flat-title">Your flat on M Stays</h1>
+          <p class="flat-listing__location">Location details coming soon</p>
+        </div>
+      </div>
+
+      <div class="flat-gallery" aria-label="Flat photo gallery">
+        <div class="flat-gallery__photo flat-gallery__photo--main" role="img" aria-label="Main flat photo will be added later"><span>Main flat photo<br>coming soon</span></div>
+        <div class="flat-gallery__photo" role="img" aria-label="Flat photo 2 will be added later"><span>Photo 02</span></div>
+        <div class="flat-gallery__photo" role="img" aria-label="Flat photo 3 will be added later"><span>Photo 03</span></div>
+        <div class="flat-gallery__photo" role="img" aria-label="Flat photo 4 will be added later"><span>Photo 04</span></div>
+        <div class="flat-gallery__photo" role="img" aria-label="Flat photo 5 will be added later"><span>Photo 05</span></div>
+      </div>
+
+      <div class="flat-layout">
+        <div class="flat-details">
+          <section class="flat-detail-block" aria-labelledby="flat-about-title">
+            <h2 id="flat-about-title">About this flat</h2>
+            <p>The listing description will be added when the property details are ready.</p>
+          </section>
+          <section class="flat-detail-block" aria-labelledby="flat-facts-title">
+            <h2 id="flat-facts-title">Property details</h2>
+            <div class="flat-facts">
+              <div class="flat-fact"><span>Location</span><strong>To be confirmed</strong></div>
+              <div class="flat-fact"><span>Guest capacity</span><strong>To be confirmed</strong></div>
+              <div class="flat-fact"><span>Bedrooms</span><strong>To be confirmed</strong></div>
+              <div class="flat-fact"><span>Amenities</span><strong>To be confirmed</strong></div>
+            </div>
+          </section>
+          <section class="flat-detail-block" aria-labelledby="flat-rules-title">
+            <h2 id="flat-rules-title">House details</h2>
+            <ul class="flat-rules">
+              <li class="flat-rule"><span>Check-in</span><strong>11:00 AM, fixed</strong></li>
+              <li class="flat-rule"><span>Check-out</span><strong>To be confirmed</strong></li>
+              <li class="flat-rule"><span>Cancellation policy</span><strong>To be confirmed</strong></li>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="flat-booking" aria-labelledby="flat-booking-title">
+          <div class="flat-booking__price">
+            <span class="eyebrow" id="flat-booking-title">Book your stay</span>
+            <strong>Price to be confirmed</strong>
+            <span>Rate and total will appear when pricing is set</span>
+          </div>
+          <form class="flat-booking__form" id="flat-booking-form">
+            <div class="flat-booking__dates">
+              <div class="stay-search__field">
+                <label for="flat-check-in">Check-in</label>
+                <input id="flat-check-in" name="checkIn" type="date" required>
+              </div>
+              <div class="stay-search__field">
+                <label for="flat-check-out">Check-out</label>
+                <input id="flat-check-out" name="checkOut" type="date" required>
+              </div>
+            </div>
+            <div class="stay-search__field">
+              <label for="flat-guests">Guests</label>
+              <input id="flat-guests" name="guests" type="number" min="1" value="2" required>
+            </div>
+            <div class="flat-booking__time">
+              <span>Check-in time</span>
+              <strong>11:00 AM</strong>
+            </div>
+            <button class="stay-search__submit" type="submit">Review stay <span aria-hidden="true">&#8599;</span></button>
+          </form>
+          <p class="flat-booking__note">Online availability, pricing and reservations are not connected yet. Reviewing a stay will not send or confirm a booking.</p>
+          <div class="stay-search__result flat-booking__result" id="flat-booking-result" role="status" aria-live="polite" hidden>
+            <strong class="stay-search__result-title"></strong>
+            <p class="stay-search__result-copy"></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer shell">
+    <a class="footer-brand" href="index.html">RAMANYA</a>
+    <p>M / Your flat</p>
+  </footer>
+
+  <script>
+    const bookingForm = document.querySelector("#flat-booking-form");
+    const checkInInput = document.querySelector("#flat-check-in");
+    const checkOutInput = document.querySelector("#flat-check-out");
+    const guestInput = document.querySelector("#flat-guests");
+    const bookingResult = document.querySelector("#flat-booking-result");
+    const bookingResultTitle = document.querySelector(".stay-search__result-title");
+    const bookingResultCopy = document.querySelector(".stay-search__result-copy");
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayValue = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
+    checkInInput.min = todayValue;
+    checkOutInput.min = todayValue;
+
+    const validateDates = () => {
+      checkOutInput.min = checkInInput.value || todayValue;
+      const invalidRange = checkInInput.value && checkOutInput.value && checkOutInput.value <= checkInInput.value;
+      checkOutInput.setCustomValidity(invalidRange ? "Check-out must be after check-in." : "");
+    };
+
+    checkInInput.addEventListener("change", validateDates);
+    checkOutInput.addEventListener("input", validateDates);
+
+    bookingForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      validateDates();
+      if (!bookingForm.reportValidity()) return;
+
+      const checkIn = new Date(`${checkInInput.value}T12:00:00`);
+      const checkOut = new Date(`${checkOutInput.value}T12:00:00`);
+      const nights = Math.round((Date.parse(`${checkOutInput.value}T00:00:00Z`) - Date.parse(`${checkInInput.value}T00:00:00Z`)) / 86400000);
+      const formatDate = (date) => new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" }).format(date);
+
+      bookingResultTitle.textContent = "Stay details ready to review";
+      bookingResultCopy.textContent = `${formatDate(checkIn)} to ${formatDate(checkOut)} · ${nights} night${nights === 1 ? "" : "s"} · ${guestInput.value} guest${Number(guestInput.value) === 1 ? "" : "s"} · check-in at 11:00 AM. Price and availability are still to be confirmed; no booking has been sent.`;
+      bookingResult.hidden = false;
+    });
+  </script>
+</body>
+</html>

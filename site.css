@@ -162,7 +162,6 @@ h1, h2, h3, p { margin-top: 0; }
 .theme-ny { --venture-color: var(--ny); }
 .theme-ny .venture-hero { background: #f1ece6; }
 
-.stay-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; width: min(100%, 340px); }
 .stay-search { padding-block: 58px; border-bottom: 1px solid var(--line); }
 .stay-search__heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 25px; }
 .stay-search__heading .eyebrow { margin-bottom: 10px; }
@@ -184,6 +183,49 @@ h1, h2, h3, p { margin-top: 0; }
 .stay-search__result[hidden] { display: none; }
 .stay-search__result strong { font-family: var(--serif); font-size: 18px; font-weight: 400; }
 .stay-search__result p { margin: 0; color: #555e6b; font-size: 12px; line-height: 1.6; }
+
+.featured-flat { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 48px; padding-block: 68px; border-bottom: 1px solid var(--line); }
+.featured-flat__copy h2 { max-width: 480px; margin: 0 0 14px; font-family: var(--serif); font-size: 37px; font-weight: 400; }
+.featured-flat__copy > p:not(.eyebrow) { max-width: 440px; margin-bottom: 22px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.featured-flat__preview { display: grid; min-height: 270px; place-items: center; border: 1px solid var(--line); color: #59635e; background: #e8ece9; font-family: var(--serif); font-size: 22px; line-height: 1.35; text-align: center; text-decoration: none; }
+.featured-flat__preview:focus-visible { outline: 2px solid var(--ma); outline-offset: 3px; }
+
+.flat-listing { padding-top: 28px; }
+.flat-breadcrumb { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; text-decoration: none; }
+.flat-breadcrumb span { color: var(--ma); font-size: 17px; }
+.flat-listing__header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-top: 25px; }
+.flat-listing__header h1 { margin: 0 0 9px; font-family: var(--serif); font-size: 46px; font-weight: 400; line-height: 1.1; }
+.flat-listing__location { margin: 0; color: var(--muted); font-size: 13px; }
+.flat-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(150px, 18vw)); gap: 8px; margin-top: 25px; }
+.flat-gallery__photo { display: grid; min-width: 0; place-items: center; padding: 16px; border: 1px solid var(--line); color: #59635e; background: #e8ece9; text-align: center; }
+.flat-gallery__photo--main { grid-column: span 2; grid-row: span 2; background: #e3e8e4; }
+.flat-gallery__photo span { font-family: var(--serif); font-size: 17px; line-height: 1.4; }
+.flat-gallery__photo--main span { font-size: 25px; }
+.flat-gallery__photo:nth-child(3) { background: #edf0f2; }
+.flat-gallery__photo:nth-child(4) { background: #f0eee8; }
+.flat-layout { display: grid; grid-template-columns: minmax(0, 1fr) 370px; align-items: start; gap: 64px; padding-block: 42px 78px; }
+.flat-details { min-width: 0; }
+.flat-detail-block { padding-block: 24px; border-bottom: 1px solid var(--line); }
+.flat-detail-block:first-child { padding-top: 0; }
+.flat-detail-block h2 { margin: 0 0 11px; font-family: var(--serif); font-size: 27px; font-weight: 400; }
+.flat-detail-block > p { max-width: 650px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.flat-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; margin-top: 22px; }
+.flat-fact { display: grid; gap: 5px; }
+.flat-fact span, .flat-rule span { color: var(--muted); font-size: 11px; }
+.flat-fact strong { font-size: 13px; font-weight: 500; }
+.flat-rules { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.flat-rule { display: flex; justify-content: space-between; gap: 20px; font-size: 13px; }
+.flat-booking { position: sticky; top: 20px; padding: 23px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.64); }
+.flat-booking__price { display: grid; gap: 5px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.flat-booking__price strong { font-family: var(--serif); font-size: 23px; font-weight: 400; }
+.flat-booking__price span:last-child { color: var(--muted); font-size: 11px; }
+.flat-booking__form { display: grid; gap: 14px; padding-top: 17px; }
+.flat-booking__dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.flat-booking__time { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px; border: 1px solid rgba(32, 39, 32, 0.2); background: rgba(255, 255, 255, 0.76); }
+.flat-booking__time span { color: var(--muted); font-size: 11px; }
+.flat-booking__time strong { font-size: 12px; font-weight: 600; }
+.flat-booking__note { margin: 13px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.flat-booking__result { margin-top: 14px; }
 
 .stay-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; width: min(100%, 340px); }
 .stay-preview__tile { display: flex; min-height: 136px; flex-direction: column; justify-content: space-between; padding: 15px; border: 1px solid rgba(82, 109, 153, 0.24); background: rgba(255, 255, 255, 0.5); }
@@ -237,6 +279,14 @@ h1, h2, h3, p { margin-top: 0; }
   .stay-search__form { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
   .stay-search__form-footer { align-items: stretch; flex-direction: column; gap: 14px; }
   .stay-search__submit { width: 100%; }
+  .featured-flat { grid-template-columns: 1fr; gap: 24px; padding-block: 48px; }
+  .featured-flat__copy h2 { font-size: 32px; }
+  .featured-flat__preview { min-height: 220px; }
+  .flat-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; }
+  .flat-gallery__photo { min-height: 135px; }
+  .flat-gallery__photo--main { grid-column: 1 / -1; grid-row: auto; min-height: 250px; }
+  .flat-layout { grid-template-columns: 1fr; gap: 30px; padding-block: 34px 55px; }
+  .flat-booking { position: static; }
   .content-section { padding-block: 50px; }
   .content-section__heading { align-items: flex-start; flex-direction: column; }
   .content-section h2 { font-size: 32px; }
@@ -254,6 +304,9 @@ h1, h2, h3, p { margin-top: 0; }
   .brand__text strong { font-size: 14px; }
   .home-hero h1, .venture-hero h1 { font-size: 42px; }
   .section-heading h2 { font-size: 33px; }
+  .flat-listing__header h1 { font-size: 38px; }
+  .flat-gallery__photo--main { min-height: 220px; }
+  .flat-facts { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
